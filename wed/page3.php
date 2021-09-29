@@ -10,7 +10,7 @@
 <body>
 <div class="container my-3">
     <h1 class="text-center">ช่วงราคาของสินค้า</h1>
-    <a href="index.php" class="btn btn-primary">ใบเสนอราคา</a>
+    <a href="index.php" class="btn btn-primary">กลับหน้าหลัก</a>
 </div>
 </body>
 </html>
