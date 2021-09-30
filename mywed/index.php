@@ -22,7 +22,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <?php echo "controller = ".$controller.",action = ".$action; ?>
 <br><a href="?controller=home&action=home" class="btn btn-primary">Home</a>
 <a href="?controller=detaildb&action=index" class="btn btn-primary">Detaildatabase</a>
-<a href="?controller=priceModels&action=index" class="btn btn-primary">Priceproduct</a>
+<a href="?controller=priceproduct&action=index" class="btn btn-primary">Priceproduct</a>
 <?php require_once("routes.php"); ?>
 
 
