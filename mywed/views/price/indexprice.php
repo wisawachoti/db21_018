@@ -1,5 +1,10 @@
-<table border = 1>
-<tr> <td>product_id</td><td>price_color</td><td>price</td><td>detail</td><td>quantity</td><td>update</td><td>delete</td> </tr>
+<table border = 3>
+<tr> <td>product_id</td>
+<td>price_color</td>
+<td>price</td>
+<td>detail</td>
+<td>quantity</td>
+<td>update</td><td>delete</td> </tr>
 <?php foreach($pricemodelsList as $priceproduct)
 {
     echo "<tr> <td>$priceproduct->product_id</td>
