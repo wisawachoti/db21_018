@@ -1,6 +1,6 @@
 <table border = 1>
 <tr> <td>product_id</td><td>price_color</td><td>price</td><td>detail</td><td>quantity</td><td>update</td><td>delete</td> </tr>
-<?php foreach($pricemodels_list as $priceproduct)
+<?php foreach($pricemodelsList as $priceproduct)
 {
     echo "<tr> <td>$priceproduct->product_id</td>
     <td>$priceproduct->price_color</td> <td>$priceproduct->price</td> 
