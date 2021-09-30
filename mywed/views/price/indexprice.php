@@ -1,4 +1,4 @@
-<table boder = 1>
+<table border = 1>
 <tr> <td>product_id</td><td>price_color</td><td>price</td><td>detail</td><td>quantity</td><td>update</td><td>delete</td> </tr>
 <?php foreach($pricemodels_list as $priceproduct)
 {
