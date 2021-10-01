@@ -60,8 +60,8 @@ class priceModels{
     {
         require("connection_connect.php");
         $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
-        ON Quantity.product_id = Product.product_id WHERE (Quantity.product_id like '%$key%' or pname like '%$pname%' or price_color like '%$key%' or 
-        price like '%$key%' or Quantity.detail like '%$key%' or quantity like '%$key%')";
+        ON Quantity.product_id = Product.product_id WHERE (Quantity.product_id like '%$key%' or Product.pname like '%$pname%' or Quantity.price_color like '%$key%' or 
+        Quantiity.price like '%$key%' or Quantity.detail like '%$key%' or Quantity.quantity like '%$key%')";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -82,7 +82,7 @@ class priceModels{
     {
         require("connection_connect.php");
         $sql = "INSERT INTO Quantity(product_id,price_color,price,detail,quantity,qtyp_id) values 
-        ('product_id','pname','price_color','price','detail','quantity')";
+        ('product_id','price_color','price','detail','quantity')";
         $result = $conn->query($sql);
         require("connect_cloes.php");
         return "add success $result rows";
