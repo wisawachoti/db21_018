@@ -23,7 +23,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <br><a href="?controller=home&action=home" class="btn btn-primary">Home</a>
 <a href="?controller=detaildb&action=index" class="btn btn-primary">Detaildatabase</a>
 <a href="?controller=priceproduct&action=index" class="btn btn-primary">Priceproduct</a>
-ืnew priceProduct <a href=?controller=priceProduct&action=newpriceProduct>Click</a><br>
+   new priceProduct <a href=?controller=priceProduct&action=newpriceProduct>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="priceproduct"/>
