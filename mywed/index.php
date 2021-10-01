@@ -23,16 +23,13 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <br><a href="?controller=home&action=home" class="btn btn-primary">Home</a>
 <a href="?controller=detaildb&action=index" class="btn btn-primary">Detaildatabase</a>
 <a href="?controller=priceproduct&action=index" class="btn btn-primary">Priceproduct</a>
-   <br>new priceProduct <a href=?controller=priceProduct&action=newpriceProduct>Click</a><br>
+   <br>new priceProduct <a href=?controller=priceproduct&action=newpriceProduct>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="priceproduct"/>
     <button type="submit" name="action" value="search">
 Search</button>
 </form>
-<td>
-    <a href="?controller=priceproduct&action=updateForm&product_id=$priceModels->product_id">update</a>
-</td>
 <?php require_once("routes.php"); ?>
 
 
