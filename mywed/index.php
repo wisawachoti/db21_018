@@ -21,8 +21,8 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <body>
 <?php echo "controller = ".$controller.",action = ".$action; ?>
 <br><a href="?controller=home&action=home" class="btn btn-primary">Home</a>
-<a href="?controller=detaildb&action=index" class="btn btn-primary">Detaildatabase</a>
-<a href="?controller=priceproduct&action=index" class="btn btn-primary">Priceproduct</a>
+<br><br><a href="?controller=detaildb&action=index" class="btn btn-primary">Detaildatabase</a>
+<br><br><a href="?controller=priceproduct&action=index" class="btn btn-primary">Priceproduct</a>
    <br>new priceProduct <a href=?controller=priceproduct&action=newpriceProduct>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
