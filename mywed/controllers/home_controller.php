@@ -6,10 +6,5 @@ class HomeController{
     public function error(){
         require_once('views/home/error.php');
     }
-
-    public function indexprice()
-    {
-        require_once('views/price/indexprice.php');
-    }
 }
 ?>
