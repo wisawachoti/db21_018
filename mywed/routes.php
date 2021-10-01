@@ -8,6 +8,7 @@ function call($controller,$action){
         case "home": $controller = new HomeController();break;
         case "detaildb": $controller = new DetaildbController();break;
         case "priceproduct": require_once("models/priceModels.php");
+                             require_once("models/productModels.php");
             $controller = new priceproduct_controller();break;
     }
     $controller->{$action}();
