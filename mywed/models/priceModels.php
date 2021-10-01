@@ -65,7 +65,7 @@ class priceModels{
         require("connection_connect.php");
         $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
         ON Quantity.product_id = Product.product_id WHERE (Quantity.product_id like '%$key%' or pname like '%$pname%' or price_color like '%$key%' or 
-        price like '%$key%' or Quantity.detail like '%$key%' or quantity like '%$key%' or qtyp_id like '%$qtyp_id%') AND Quantity.product_id = Product.product_id";
+        price like '%$key%' or Quantity.detail like '%$key%' or quantity like '%$key%' or qtyp_id like '%$qtyp_id%')";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
