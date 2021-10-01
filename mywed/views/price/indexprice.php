@@ -12,8 +12,8 @@
     <td>$priceproduct->pname</td>
     <td>$priceproduct->price_color</td> <td>$priceproduct->price</td> 
     <td>$priceproduct->detail</td> <td>$priceproduct->quantity</td> 
-    <td>udate</td> <td>delete</td> </tr>";
+    <td>  <a href=?controller=priceproduct&action=updateForm&product_id=$priceModels->product_id> update </td>
+    <td>delete</td> </tr>";
 }
 echo "</table>";
-?>
-    
+ ?>
