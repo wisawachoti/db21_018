@@ -31,4 +31,12 @@ class priceproduct_controller
          $pricemodelsList = priceModels::search($key);
          require_once('views/price/indexprice.php');
      }
+
+     public function updateForm()
+     {
+         $product_id = $_GET['product_id'];
+         $priceModels = priceModels::get($product_id);
+         $pricemodelsList = priceModels::getAll();
+         require_once('views/price/updateForm.php');
+     }
 }?>
