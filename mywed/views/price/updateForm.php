@@ -1,14 +1,14 @@
 <form method="get" action="">
     
-    <label>price_color<input type="text" name="price_color"
+    <label>ราคาของสี<input type="text" name="price_color"
         value="<?php echo $priceModels->price_color;?>"/> </label><br>
-    <label>price<input type="text" name="price"
+    <label>ราคาสินค้า<input type="text" name="price"
         value="<?php echo $priceModels->price;?>"/> </label><br>
-    <label>detail<input type="text" name="detail"
+    <label>จำนวนขั้นต่ำ<input type="text" name="detail"
         value="<?php echo $priceModels->detail;?>"/> </label><br>
-    <label>quantity<input type="text" name="quantity"
+    <label>จำนวนสินค้า<input type="text" name="quantity"
         value="<?php echo $priceModels->quantity;?>"/> </label><br>
-    <label>product_id<select name="product_id">
+    <label>รหัสสินค้า<select name="product_id">
         <?php foreach($priceModels as $priceM)
         {
             echo "option value=$priceM->product_id";
