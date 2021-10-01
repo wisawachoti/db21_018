@@ -30,6 +30,9 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <button type="submit" name="action" value="search">
 Search</button>
 </form>
+<td>
+    <a href="?controller=priceproduct&action=updateForm&product_id=$priceModels->product_id">update</a>
+</td>
 <?php require_once("routes.php"); ?>
 
 
