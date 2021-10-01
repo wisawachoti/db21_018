@@ -58,14 +58,16 @@ class priceModels{
 
     public static function search($key)
     {
+        $pricemodelsList=[];
         require("connection_connect.php");
         $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
-        ON Quantity.product_id = Product.product_id WHERE (Quantity.product_id like '%$key%' or Product.product_id like '%$key%' or Product.pname like '%$pname%' or Quantity.price_color like '%$key%' or 
-        Quantity.price like '%$key%' or Quantity.detail like '%$key%' or Product.detail like '%$key%' or Quantity.quantity like '%$key%') AND Quantity.product_id = Product.product_id";
+        ON Quantity.product_id = Product.product_id WHERE ((Quantity.product_id like '%$key%' and Product.product_id like '%$key%')
+         or Product.pname like '%$key%' or Quantity.price_color like '%$key%' or Quantity.price like '%$key%' 
+         or Quantity.detail like '%$key%' or Product.detail like '%$key%' or Quantity.quantity like '%$key%') ";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
-            $product_id = $my_row[produuct_id];
+            $product_id = $my_row[product_id];
             $pname = $my_row[pname];
             $price_color = $my_row[price_color];
             $price = $my_row[price];
