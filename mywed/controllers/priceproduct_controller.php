@@ -4,13 +4,14 @@ class priceproduct_controller
     public function index() 
     {
         $pricemodelsList = priceModels::getAll();
-        require_once('views/price/indexprice.php');
+        require_once('./views/priceproduct/indexprice.php');
     }
 
     public function newpriceProduct()
     {
-        $productmodelsList =   productModels::getAll();
-        require_once('views/price/newpriceProduct.php');
+        $productModelsList = productModels::getAll();
+        $pricemodelsList = priceModels::getAll();
+        require_once('./views/priceproduct/newpriceProduct.php');
     }
 
     public function addProduct()
@@ -20,7 +21,9 @@ class priceproduct_controller
         $price = $_GET['price'];
         $detail = $_GET['detail'];
         $quantity = $_GET['quantity'];
-        priceModels::Add($product_id,$price_color,$price,$detail,$quantity);
+        $qtyp_id = $_GET['qtyp_id'];
+        echo $qtyp_id;
+        priceModels::Add($product_id,$qtyp_id,$price_color,$price,$detail,$quantity);
 
         priceproduct_controller::index();
      }
