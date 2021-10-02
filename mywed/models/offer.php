@@ -1,5 +1,5 @@
 <?php
- class Offer{
+ class offer{
     public $id;
     public $date;
     public $payment;
