@@ -31,14 +31,14 @@ class priceproduct_controller
      {
          $key = $_GET['key'];
          $pricemodelsList = priceModels::search($key);
-         require_once('views/price/indexprice.php');
+         require_once('views/priceproduct/indexprice.php');
      }
 
      public function updateForm()
      {
          $product_id = $_GET['product_id'];
          $priceModels = priceModels::get($product_id);
-         $pricemodelsList = priceModels::getAll();
-         require_once('views/price/updateForm.php');
+         $productModelsList = productModels::getAll();
+         require_once('views/priceproduct/updateForm.php');
      }
 }?>
