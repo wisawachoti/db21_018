@@ -1,10 +1,10 @@
 <table border = 3>
-<tr> <td>รหัสสินค้า</td>
-<td>ชื่อสินค้า</td>
-<td>ราคาของสี</td>
-<td>ราคาสินค้า</td>
-<td>จำนวนขั้นต่ำ</td>
-<td>จำนวนสินค้า</td>
+<tr> <td>product_id</td>
+<td>pname</td>
+<td>price_color</td>
+<td>price</td>
+<td>detail</td>
+<td>quantity</td>
 <td>update</td><td>delete</td> </tr>
 <?php foreach($pricemodelsList as $priceproduct)
 {
