@@ -11,6 +11,7 @@
         }?>
         </select></label><br>
     <input type="hidden" name="controller" value="priceproduct"/>
+    <input type="hidden" name="qtyp_id" value="<?php echo $pricemodelsList->qtyp_id; ?>"/>
     <button type="submit" name="action" value="index">Back</button>
     <button type="submit" name="action" value="addProduct">Save</button>
 </form>
