@@ -9,7 +9,7 @@ class priceproduct_controller
 
     public function newpriceProduct()
     {
-        $productmodelsList =  productModels::getAll();
+        $productmodelsList =   productModels::getAll();
         require_once('views/price/newpriceProduct.php');
     }
 
