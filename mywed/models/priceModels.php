@@ -52,7 +52,7 @@ class priceModels{
             $price = $my_row[price];
             $detail = $my_row[detail];
             $quantity = $my_row[quantity];
-            $qtyp_id = $my_row[qttyp_id];
+            $qtyp_id = $my_row[qtyp_id];
             $pricemodelsList[] = new priceModels($product_id,$pname,$price_color,$price,$detail,$quantity,$qtyp_id);
         }
         require("connection_close.php");
