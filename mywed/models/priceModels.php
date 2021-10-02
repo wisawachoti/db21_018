@@ -36,7 +36,6 @@ class priceModels{
 
     public static function getAll()
     {
-        echo "tttt";
         $pricemodelsList = [];
         require("connection_connect.php");
         $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
@@ -81,11 +80,11 @@ class priceModels{
         return $pricemodelsList;
     }
 
-    public static function add($product_id,$pname,$price_color,$price,$detail,$quantity)
+    public static function Add($product_id,$qtyp_id,$price_color,$price,$detail,$quantity)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO Quantity(product_id,price_color,price,detail,quantity,qtyp_id) values 
-        ('product_id','price_color','price','detail','quantity')";
+        $sql = "INSERT INTO `Quantity`(`qtyp_id`, `price`, `price_color`, `product_id`, `detail`, `quantity`) 
+        VALUES ($qtyp_id,$price,$price_color,'$product_id','$detail',$quantity)";
         $result = $conn->query($sql);
         require("connect_cloes.php");
         return "add success $result rows";
