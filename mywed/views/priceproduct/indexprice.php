@@ -16,7 +16,8 @@ Search</button>
 <td>update</td><td>delete</td> </tr>
 <?php foreach($pricemodelsList as $priceproduct)
 {
-    echo "<tr> <td>$priceproduct->product_id</td>
+    echo "<tr> <td>$priceproduct->qtyp_id</td>
+    <td>$priceproduct->product_id</td>
     <td>$priceproduct->pname</td>
     <td>$priceproduct->price_color</td> <td>$priceproduct->price</td> 
     <td>$priceproduct->detail</td> <td>$priceproduct->quantity</td> 
