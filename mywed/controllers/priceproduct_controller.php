@@ -22,7 +22,6 @@ class priceproduct_controller
         $detail = $_GET['detail'];
         $quantity = $_GET['quantity'];
         $qtyp_id = $_GET['qtyp_id'];
-        echo $qtyp_id;
         priceModels::Add($product_id,$qtyp_id,$price_color,$price,$detail,$quantity);
 
         priceproduct_controller::index();
