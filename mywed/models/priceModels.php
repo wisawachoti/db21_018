@@ -6,8 +6,9 @@ class priceModels{
     public $price;
     public $detail;
     public $quantity;
+    public $qtyp_id;
 
-    public function __construct($product_id,$pname,$price_color,$price,$detail,$quantity)
+    public function __construct($product_id,$pname,$price_color,$price,$detail,$quantity,$qtyp_id)
     {
         $this->product_id = $product_id;
         $this->pname = $pname;
@@ -15,12 +16,13 @@ class priceModels{
         $this->price = $price;
         $this->detail = $detail;
         $this->quantity = $quantity;
+        $this->qtyp_id = $qtyp_id;
     }
 
     public static function get($product_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
+        $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity,qtyp_id FROM Quantity INNER JOIN Product 
         ON  Quantity.product_id = Product.product_id";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
@@ -29,16 +31,17 @@ class priceModels{
         $price = $my_row[price];
         $detail = $my_row[detail];
         $quantity = $my_row[qauantity];
+        $qtyp_id = $my_row[qtyp_id];
         require("connection_close.php");
 
-        return new priceModels($product_id,$pname,$price_color,$price,$detail,$quantity);
+        return new priceModels($product_id,$pname,$price_color,$price,$detail,$quantity,$qtyp_id);
     }
 
     public static function getAll()
     {
         $pricemodelsList = [];
         require("connection_connect.php");
-        $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
+        $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity,qtyp_id FROM Quantity INNER JOIN Product 
         ON Quantity.product_id = Product.product_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -49,7 +52,8 @@ class priceModels{
             $price = $my_row[price];
             $detail = $my_row[detail];
             $quantity = $my_row[quantity];
-            $pricemodelsList[] = new priceModels($product_id,$pname,$price_color,$price,$detail,$quantity);
+            $qtyp_id = $my_row[qttyp_id];
+            $pricemodelsList[] = new priceModels($product_id,$pname,$price_color,$price,$detail,$quantity,$qtyp_id);
         }
         require("connection_close.php");
 
@@ -82,12 +86,13 @@ class priceModels{
 
     public static function Add($product_id,$qtyp_id,$price_color,$price,$detail,$quantity)
     {
+        echo $product_id.$price_color.$price.$detail.$quantity.$qtyp_id;
         require("connection_connect.php");
         $sql = "INSERT INTO `Quantity`(`qtyp_id`, `price`, `price_color`, `product_id`, `detail`, `quantity`) 
         VALUES ($qtyp_id,$price,$price_color,'$product_id','$detail',$quantity)";
         $result = $conn->query($sql);
-        require("connect_cloes.php");
-        return "add success $result rows";
+        require("connection_close.php");
+        return ;
     }
 
     public static function update($product_id,$pname,$price_color,$price,$detail,$quantity)
