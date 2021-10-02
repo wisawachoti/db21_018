@@ -6,7 +6,8 @@
     <button type="submit" name="action" value="search">
 Search</button>
 </form>
-<tr> <td>product_id</td>
+<tr> <td>qtyp_id</td>
+<td>product_id</td>
 <td>pname</td>
 <td>price_color</td>
 <td>price</td>
