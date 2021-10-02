@@ -1,5 +1,5 @@
 <?php
-class Offer{
+ class offer{
     public $id;
     public $date;
     public $payment;
@@ -19,8 +19,8 @@ class Offer{
     public static function getAll(){
         $offerList = [];
         require("connection_connect.php");
-        $sql = "";
-        $result = con->query($sql);
+        $sql = "select * from Offer";
+        $result = conn->query($sql);
         while($my_row = $result->fetch_assoc()){
             $id = $my_row[offer_id];
             $date = $my_row[Date];
@@ -34,4 +34,5 @@ class Offer{
 
         return $offerList;
     }
-}
+ }
+?>

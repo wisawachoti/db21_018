@@ -1,3 +1,4 @@
+<p>Welcome offer</p>
 <table border= 1 >
 <tr> <td>offer_id</td><td>Date</td><td>payment</td><td>pay_m</td><td>/CustomerID</td><td>employeeID</td>
      <td>update</td><td>delete</td> </tr>
