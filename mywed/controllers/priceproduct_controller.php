@@ -3,14 +3,16 @@ class priceproduct_controller
 {
     public function index() 
     {
+        echo "INDEX";
         $pricemodelsList = priceModels::getAll();
-        require_once('views/price/indexprice.php');
+        require_once('./views/price/indexprice.php');
     }
 
     public function newpriceProduct()
     {
-        $productmodelsList =   productModels::getAll();
-        require_once('views/price/newpriceProduct.php');
+        echo "new";
+        $pricemodelsList = productModels::getAll();
+        require_once('./views/price/newpriceProduct.php');
     }
 
     public function addProduct()
