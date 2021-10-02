@@ -1,5 +1,7 @@
 <form method="get" action="">
-    
+
+    <label>qtyp_id<input type="text" name="qtyp_id"
+        value="<?php echo $priceModels->price_color;?>"/> </label><br>
     <label>price_color<input type="text" name="price_color"
         value="<?php echo $priceModels->price_color;?>"/> </label><br>
     <label>price<input type="text" name="price"
@@ -9,7 +11,7 @@
     <label>quantity<input type="text" name="quantity"
         value="<?php echo $priceModels->quantity;?>"/> </label><br>
     <label>product_id<select name="product_id">
-        <?php foreach($priceModels as $priceM)
+        <?php foreach($pricemodelsList as $priceM)
         {
             echo "option value=$priceM->product_id";
             if($priceM->product_id==$priceModels->product_id)
@@ -20,6 +22,6 @@
         }?>
         </select></label><br>
         <input type="hidden" name="controller" value="priceproduct"/>
-        <buutton type="submit" name="action" value="index">Back</button>
+        <button type="submit" name="action" value="index">Back</button>
         <button type="submit" name="action" value="updateForm">Update</button>
     </form>

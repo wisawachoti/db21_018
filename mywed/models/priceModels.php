@@ -86,7 +86,6 @@ class priceModels{
 
     public static function Add($product_id,$qtyp_id,$price_color,$price,$detail,$quantity)
     {
-        echo $product_id.$price_color.$price.$detail.$quantity.$qtyp_id;
         require("connection_connect.php");
         $sql = "INSERT INTO `Quantity`(`qtyp_id`, `price`, `price_color`, `product_id`, `detail`, `quantity`) 
         VALUES ($qtyp_id,$price,$price_color,'$product_id','$detail',$quantity)";
@@ -95,13 +94,13 @@ class priceModels{
         return ;
     }
 
-    public static function update($product_id,$pname,$price_color,$price,$detail,$quantity)
+    public static function update($product_id,$qtyp_id,$price_color,$price,$detail,$quantity)
     {
         require("connection_connect.php");
-        $sql = "UPDATE Quantity SET product_id = '$product_id',price_color = '$price_color',
+        $sql = "UPDATE Quantity SET qtyp_id = '$qtyp_id',product_id = '$product_id',price_color = '$price_color',
         price = '$price',detail = '$detail',quantity = '$quantity'";
         $result = $conn->query($sql);
-        require("coonnection_close.php");
+        require("connection_close.php");
         return "update success $result row";
     }
 
