@@ -35,3 +35,4 @@ class Offer{
         return $offerList;
     }
 }
+?>
