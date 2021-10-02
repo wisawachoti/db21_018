@@ -3,6 +3,7 @@ class priceproduct_controller
 {
     public function index() 
     {
+        echo "tttt";
         $pricemodelsList = priceModels::getAll();
         require_once('./views/priceproduct/indexprice.php');
     }
