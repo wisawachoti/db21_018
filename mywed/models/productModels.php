@@ -15,7 +15,6 @@ class productModels{
 
     public static function getAll()
     {
-        echo "hi";
         $productmodelsList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM Product";
