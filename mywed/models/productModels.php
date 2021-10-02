@@ -15,6 +15,7 @@ class productModels{
 
     public static function getAll()
     {
+        echo "hi";
         $productmodelsList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM Product";
@@ -24,7 +25,7 @@ class productModels{
             $product_id = $my_row[product_id];
             $pname = $my_row[pname];
             $detail = $my_row[detail];
-            $type = $my_row[type_id]
+            $type = $my_row[type_id];
             $productmodelsList[] = new productModels($product_id,$pname,$detail,$type);
         }
         require("connection_close.php");
