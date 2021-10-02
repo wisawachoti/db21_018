@@ -3,15 +3,13 @@ class priceproduct_controller
 {
     public function index() 
     {
-        echo "INDEX";
         $pricemodelsList = priceModels::getAll();
         require_once('./views/price/indexprice.php');
     }
 
     public function newpriceProduct()
     {
-        echo "new";
-        $pricemodelsList = productModels::getAll();
+        $productModelsList = productModels::getAll();
         require_once('./views/price/newpriceProduct.php');
     }
 
@@ -22,7 +20,8 @@ class priceproduct_controller
         $price = $_GET['price'];
         $detail = $_GET['detail'];
         $quantity = $_GET['quantity'];
-        priceModels::Add($product_id,$price_color,$price,$detail,$quantity);
+        $qtyp_id = $_GET['qtyp_id'];
+        priceModels::Add($product_id,$qtyp_id,$price_color,$price,$detail,$quantity);
 
         priceproduct_controller::index();
      }
