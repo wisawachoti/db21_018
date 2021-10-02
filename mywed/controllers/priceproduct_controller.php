@@ -4,13 +4,13 @@ class priceproduct_controller
     public function index() 
     {
         $pricemodelsList = priceModels::getAll();
-        require_once('./views/price/indexprice.php');
+        require_once('./views/priceproduct/indexprice.php');
     }
 
     public function newpriceProduct()
     {
         $productModelsList = productModels::getAll();
-        require_once('./views/price/newpriceProduct.php');
+        require_once('./views/priceproduct/newpriceProduct.php');
     }
 
     public function addProduct()
