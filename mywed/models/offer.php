@@ -19,7 +19,7 @@ class Offer{
     public static function getAll(){
         $offerList = [];
         require("connection_connect.php");
-        $sql = "";
+        $sql = "select * from Offer";
         $result = con->query($sql);
         while($my_row = $result->fetch_assoc()){
             $id = $my_row[offer_id];
