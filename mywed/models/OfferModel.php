@@ -1,5 +1,5 @@
 <?php
- class offer{
+ class OfferModel{
     public $id;
     public $date;
     public $payment;
@@ -28,7 +28,7 @@
             $pay_m = $my_row[pay_m];
             $customerID = $my_row[CustomerID];
             $employeeID = $my_row[employee_id];
-            $offerList[] = new Offer($id,$date,$payment,$pay_m,$customerID,$employeeID);
+            $offerList[] = new OfferModel($id,$date,$payment,$pay_m,$customerID,$employeeID);
         }
         require("connection_close.php");
 
