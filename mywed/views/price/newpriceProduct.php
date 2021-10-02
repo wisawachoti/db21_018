@@ -1,11 +1,11 @@
 <fome method="get" action="">
     <br>
-    <label>ราคาของสี<input type="text" name="price_color"/> </label><br>
-    <label>ราคาสินค้า<input type="text" name="price"/> </label><br>
-    <label>จำนวนขั้นต่ำ<input type="text" name="detail"/> </label><br>
-    <label>จำนวนสินค้า<input type="text" name="quantity"/> </label><br>
-    <label>รหัสสินค้า<select name ="price_id">
-<?php foreach($pricemodelsList as $priceProduct)
+    <label>price_color<input type="text" name="price_color"/> </label><br>
+    <label>price<input type="text" name="price"/> </label><br>
+    <label>detail<input type="text" name="detail"/> </label><br>
+    <label>quantity<input type="text" name="quantity"/> </label><br>
+    <label>product_id<select name ="price_id">
+<?php foreach($productmodelsList as $priceProduct)
 {
     echo "<option value=$priceProduct->product_id > $priceProduct->pname</option>";
 }?>
