@@ -36,6 +36,7 @@ class priceModels{
 
     public static function getAll()
     {
+        echo "tttt";
         $pricemodelsList = [];
         require("connection_connect.php");
         $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity FROM Quantity INNER JOIN Product 
