@@ -22,6 +22,7 @@
         }?>
         </select></label><br>
         <input type="hidden" name="controller" value="priceproduct"/>
+        <input type="hidden" name="product_id" value="<?php echo $priceModels->product_id; ?>"/>
         <button type="submit" name="action" value="index">Back</button>
         <button type="submit" name="action" value="updateForm">Update</button>
     </form>
