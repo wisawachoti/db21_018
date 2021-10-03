@@ -30,7 +30,7 @@ class priceModels{
         $price_color = $my_row[price_color];
         $price = $my_row[price];
         $detail = $my_row[detail];
-        $quantity = $my_row[qauantity];
+        $quantity = $my_row[quantity];
         $qtyp_id = $my_row[qtyp_id];
         require("connection_close.php");
 
