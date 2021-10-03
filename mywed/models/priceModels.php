@@ -107,7 +107,6 @@ class priceModels{
 
     public static function delete($qtyp_id)
     {
-        echo $qtyp_id;
         require("connection_connect.php");
         $sql = "DELETE FROM `Quantity` WHERE qtyp_id = $qtyp_id";
         $result = $conn->query($sql);
