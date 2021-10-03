@@ -27,15 +27,15 @@
         text-align: center;
         color:#000000;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        border-bottom: 1px solid #dabcb2;
-        border-left: 1px solid #dabcb2;
-        border-right: 1px solid #dabcb2;
+        border-bottom: 1px solid #e6dbd8;
+        border-left: 1px solid #e6dbd8;
+        border-right: 1px solid #e6dbd8;
     }
     .content-table tbody tr:nth-of-type(even) {
-        background-color: #dabcb2;
+        background-color: #e6dbd8;
     }
     .content-table tbody tr:nth-of-type(odd) {
-        background-color: #ebcdc3;
+        background-color: #f0e7e4;
     }
     .content-table tbody tr:last-of-type {
         border-bottom: 5px solid rgb(64, 30, 15);
