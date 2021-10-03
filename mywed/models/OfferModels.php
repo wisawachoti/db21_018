@@ -20,12 +20,12 @@
         $sql = "SELECT * FROM `Offer`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()){
-            $id = $my_row['offer_id'];
-            $date = $my_row['Date'];
-            $payment = $my_row['payment'];
-            $pay_m = $my_row['pay_m'];
-            $customerID = $my_row['CustomerID'];
-            $employeeID = $my_row['employee_id'];
+            $id = $my_row[offer_id];
+            $date = $my_row[Date];
+            $payment = $my_row[payment];
+            $pay_m = $my_row[pay_m];
+            $customerID = $my_row[CustomerID];
+            $employeeID = $my_row[employee_id];
             $offer_list[] = new OfferModels($id,$date,$payment,$pay_m,$customerID,$employeeID);
     }
         require("connection_close.php");
