@@ -10,11 +10,11 @@
     }
 
     .content-table thead tr {
-        background-color: rgb(23, 57, 92);
-        border-bottom: 1px rgb(23, 57, 92);
-        border-left: 1px rgb(23, 57, 92);
-        border-right: 1px rgb(23, 57, 92);
-        color: #dce6ef;
+        background-color: rgb(64, 30, 15);
+        border-bottom: 1px rgb(64, 30, 15);
+        border-left: 1px rgb(64, 30, 15);
+        border-right: 1px rgb(64, 30, 15);
+        color: #ffffff;
         text-align: center;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
@@ -25,20 +25,20 @@
     }
     .content-table tbody tr {
         text-align: center;
-        color: grey;
+        color:#000000;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        border-bottom: 1px solid #c2d7e2;
-        border-left: 1px solid #c2d7e2;
-        border-right: 1px solid #c2d7e2;
+        border-bottom: 1px solid #dabcb2;
+        border-left: 1px solid #dabcb2;
+        border-right: 1px solid #dabcb2;
     }
     .content-table tbody tr:nth-of-type(even) {
-        background-color: #c2d7e2;
+        background-color: #dabcb2;
     }
     .content-table tbody tr:nth-of-type(odd) {
-        background-color: #dce6ef;
+        background-color: #ebcdc3;
     }
     .content-table tbody tr:last-of-type {
-        border-bottom: 5px solid rgb(23, 57, 92);
+        border-bottom: 5px solid rgb(64, 30, 15);
     }
     
     body {
@@ -52,7 +52,7 @@
         text-align: center;
         box-sizing: border-box;
         border: none;
-        background-color: rgb(23, 57, 92);
+        background-color: rgb(64, 30, 15);
         color: white;
     }
     .button {
@@ -66,14 +66,14 @@
     }
 
     .button1 {
-        background-color: rgb(23, 57, 92); 
+        background-color: rgb(64, 30, 15); 
         color: white; 
-        border: 2px solid rgb(23, 57, 92);
+        border: 2px solid rgb(64, 30, 15);
     }
 
     .button1:hover {
         background-color: white;
-        color: rgb(23, 57, 92);
+        color: rgb(64, 30, 15);
         border: 2px solid white;
     }
 
