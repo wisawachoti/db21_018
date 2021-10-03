@@ -108,7 +108,7 @@ class priceModels{
     public static function delete($product_id)
     {
         require("connection_connect.php");
-        $sql = "DELETE FROM Quantity WHERE product_id = $product_id";
+        $sql = "DELETE FROM `Quantity` WHERE product_id = $product_id";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
