@@ -37,7 +37,6 @@ class priceproduct_controller
      public function updateForms()
      {
          $pb = $_GET['qtyp_id'];
-         echo $pb;
          $priceproduct = priceModels::get($pb);
          $productModelsList = productModels::getAll();
          require_once('views/priceproduct/updateForm.php');
