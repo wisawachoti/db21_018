@@ -19,7 +19,7 @@
     public static function getAll(){
         $offer_list = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM Offer";
+        $sql = "SELECT * FROM `Offer`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()){
             $id = $my_row['offer_id'];
@@ -29,7 +29,7 @@
             $customerID = $my_row['CustomerID'];
             $employeeID = $my_row['employee_id'];
             $offer_list[] = new OfferModel($id,$date,$payment,$pay_m,$customerID,$employeeID);
-        }
+    }
         
         require("connection_close.php");
         
