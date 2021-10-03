@@ -1,14 +1,15 @@
 <?php
-$controllers = array('home'=>['home','error'],'detaildb'=>['index'],'offer'=>['index'],
+$controllers = array('home'=>['home','error'],'detaildb'=>['index','search'],'offer'=>['index'],
 'priceproduct'=>['index','newpriceProduct','addProduct','search','updateForms','update','deleteconfirm','delete']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller){
         case "home": $controller = new HomeController();break;
-         case "offer": require_once("models/OfferModels.php");
+        case "offer": require_once("models/OfferModels.php");
                       $controller = new offerController();break;
-        case "detaildb": $controller = new DetaildbController();break;
+        case "detaildb": require("models/offerdetailModel.php");
+                      $controller = new DetaildbController();break;
         case "priceproduct": require_once("./models/priceModels.php");
                       require_once("./models/productModels.php");
             $controller = new priceproduct_controller();break;
