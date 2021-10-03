@@ -1,4 +1,4 @@
-<p>Welcome offer</p>
+<br> new offer <a href="?controller = offer & action = newOffer"> click </a><br>
 
 <table border= 1 >
 <tr> 
