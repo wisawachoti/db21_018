@@ -7,7 +7,7 @@
         value="<?php echo $priceproduct->price_color;?>"/> </label><br>
 
     <label>price <input type="text" name="price"
-        value="<?php echo $priceModels->price;?>"/> </label><br>
+        value="<?php echo $priceproduct->price;?>"/> </label><br>
         
     <label>detail <input type="text" name="detail"
         value="<?php echo $priceproduct->detail;?>"/> </label><br>
