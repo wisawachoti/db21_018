@@ -6,7 +6,6 @@
     public $pay_m;
     public $customerID;
     public $employeeID;
-
     public function _construct ($id,$date,$payment,$pay_m,$customerID,$employeeID){
         $this->id = $id;
         $this->date = $date;
@@ -15,7 +14,6 @@
         $this->customerID = $customerID;
         $this->employeeID = $employeeID;
     }
-
     public static function getAll(){
         $offer_list = [];
         require("connection_connect.php");
@@ -30,10 +28,8 @@
             $employeeID = $my_row['employee_id'];
             $offer_list[] = new OfferModels($id,$date,$payment,$pay_m,$customerID,$employeeID);
     }
-        
         require("connection_close.php");
-        
-        return $offer_list;
+         return $offer_list;
     }
 }
 ?>
