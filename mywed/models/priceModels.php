@@ -23,7 +23,7 @@ class priceModels{
     {
         require("connection_connect.php");
         $sql = "SELECT Quantity.product_id,pname,price_color,price,Quantity.detail,quantity,qtyp_id FROM Quantity INNER JOIN Product 
-        ON  Quantity.product_id = Product.product_id";
+        ON  Quantity.product_id = Product.product_id  WHERE qtyp_id=$qtyp_id ";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $product_id = $my_row[product_id];
@@ -97,8 +97,9 @@ class priceModels{
     public static function update($product_id,$qtyp_id,$price_color,$price,$detail,$quantity)
     {
         require("connection_connect.php");
-        $sql = "UPDATE Quantity SET qtyp_id = '$qtyp_id',product_id = '$product_id',price_color = '$price_color',
-        price = '$price',detail = '$detail',quantity = '$quantity'";
+        $sql = "UPDATE `Quantity`
+        SET `price`=$price,`price_color`= $price_color, `detail`='$detail',`quantity`=$quantity
+        WHERE `qtyp_id`=$qtyp_id AND `product_id`='$product_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
