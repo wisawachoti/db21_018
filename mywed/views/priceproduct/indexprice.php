@@ -1,3 +1,4 @@
+<br>พจรินทร์ ประเสริฐศรี 6220503309
 <table border = 3>
 <br>new priceProduct <a href=?controller=priceproduct&action=newpriceProduct>Click</a><br>
 <form method="get" action="">
@@ -23,9 +24,8 @@ Search</button>
     <td>$priceproduct->price</td> 
     <td>$priceproduct->detail</td> 
     <td>$priceproduct->quantity</td> 
-    <td>  <a href=?controller=priceproduct&action=updateForms&product_id=$priceproduct->product_id> update </td>
-    <td>delete</td> </tr>;
-    <td>  <a herf=?controller=pricrproduct&action=deleteconfirm&product_id=$priceproduct->product_id> delete</a> </td>";
+    <td>  <a href=?controller=priceproduct&action=updateForms&qtyp_id=$priceproduct->qtyp_id> update </a> </td>
+    <td>  <a href=?controller=priceproduct&action=deleteconfirm&qtyp_id=$priceproduct->qtyp_id> delete</a> </td></tr>";
 }
 echo "</table>";
  ?>
