@@ -6,7 +6,7 @@ function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller){
         case "home": $controller = new HomeController();break;
-        case "offer": require_once("models/OfferModel.php");
+        case "offer": require_once("models/OfferModels.php");
                       $controller = new offerController();break;
         case "detaildb": $controller = new DetaildbController();break;
         case "priceproduct": require_once("./models/priceModels.php");
