@@ -53,4 +53,18 @@ class priceproduct_controller
         priceModels::update($product_id,$qtyp_id,$price_color,$price,$detail,$quantity);
          priceproduct_controller::index();
      }
+
+     public function deleteconfirm()
+     {
+        $product_id = $_GET['product_id'];
+        priceModels::get($product_id);
+        require_once('views/priceproduct/deleteConfirm.php');
+     }
+
+     public function delete()
+     {
+         $product_id = $_GET['product_id'];
+         priceModels::delete($product_id);
+         $priceproduct_controller::index();
+     }
 }?>
