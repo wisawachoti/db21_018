@@ -24,7 +24,8 @@ Search</button>
     <td>$priceproduct->detail</td> 
     <td>$priceproduct->quantity</td> 
     <td>  <a href=?controller=priceproduct&action=updateForms&product_id=$priceproduct->product_id> update </td>
-    <td>delete</td> </tr>";
+    <td>delete</td> </tr>;
+    <td>  <a herf=?controller=pricrproduct&action=deleteconfirm&product_id=$priceproduct->product_id> delete</a> </td>";
 }
 echo "</table>";
  ?>
