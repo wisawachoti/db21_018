@@ -21,7 +21,7 @@
                  <td>$Offer->employeeID</td>  
                  <td>update</td> 
                  <td>delete</td> 
-         </tr>";
+          </tr>";
  }
     echo "</table>";
  
