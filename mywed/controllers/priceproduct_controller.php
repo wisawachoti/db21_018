@@ -36,7 +36,7 @@ class priceproduct_controller
 
      public function updateForms()
      {
-         $pb = $_GET['product_id'];
+         $pb = $_GET['qtyp_id'];
          $priceproduct = priceModels::get($pb);
          $productModelsList = productModels::getAll();
          require_once('views/priceproduct/updateForm.php');
@@ -50,21 +50,22 @@ class priceproduct_controller
         $detail = $_GET['detail'];
         $quantity = $_GET['quantity'];
         $qtyp_id = $_GET['qtyp_id'];
-        priceModels::update($product_id,$qtyp_id,$price_color,$price,$detail,$quantity);
+        $qtyp = $_GET['qtyp'];
+        priceModels::update($product_id,$qtyp_id,$price_color,$price,$detail,$quantity,$qtyp);
          priceproduct_controller::index();
      }
 
      public function deleteconfirm()
      {
-        $product_id = $_GET['product_id'];
-        priceModels::get($product_id);
-        require_once('views/priceproduct/deleteConfirm.php');
+        $qtyp_id = $_GET['qtyp_id'];
+        $priceproduct = priceModels::get($qtyp_id);
+        require_once('./views/priceproduct/deleteConfirm.php');
      }
 
      public function delete()
      {
-         $product_id = $_GET['product_id'];
-         priceModels::delete($product_id);
-         $priceproduct_controller::index();
+         $qtyp = $_GET['qtyp'];
+         priceModels::delete($qtyp);
+         priceproduct_controller::index();
      }
 }?>
