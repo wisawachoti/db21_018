@@ -21,7 +21,7 @@
             echo "<option value=$priceProduct->product_id ";
             if($priceProduct->product_id==$priceproduct->product_id)
             {
-                echo "selected='selected'";
+                echo " selected='selected'";
             }
             echo "> $priceProduct->pname</option>";
         }?>
