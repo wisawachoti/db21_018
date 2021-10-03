@@ -19,10 +19,13 @@ Search</button>
     echo "<tr> <td>$priceproduct->qtyp_id</td>
     <td>$priceproduct->product_id</td>
     <td>$priceproduct->pname</td>
-    <td>$priceproduct->price_color</td> <td>$priceproduct->price</td> 
-    <td>$priceproduct->detail</td> <td>$priceproduct->quantity</td> 
-    <td>  <a href=?controller=priceproduct&action=updateForm&product_id=$priceModels->product_id> update </td>
-    <td>delete</td> </tr>";
+    <td>$priceproduct->price_color</td> 
+    <td>$priceproduct->price</td> 
+    <td>$priceproduct->detail</td> 
+    <td>$priceproduct->quantity</td> 
+    <td>  <a href=?controller=priceproduct&action=updateForms&product_id=$priceproduct->product_id> update </td>
+    <td>delete</td> </tr>;
+    <td>  <a herf=?controller=pricrproduct&action=deleteconfirm&product_id=$priceproduct->product_id> delete</a> </td>";
 }
 echo "</table>";
  ?>
