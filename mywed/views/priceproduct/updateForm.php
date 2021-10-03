@@ -28,7 +28,7 @@
         </select></label><br>
        
     <input type="hidden" name="controller" value="priceproduct"/>
-    <input type="hidden" name="product_id" value="<?php echo $priceproduct->product_id; ?>"/>
+    <input type="hidden" name="qtyp" value="<?php echo $priceproduct->qtyp_id; ?>"/>
     <button type="submit" name="action" value="index"> Back </button>
     <button type="submit" name="action" value="update"> Update </button>
 </form>
