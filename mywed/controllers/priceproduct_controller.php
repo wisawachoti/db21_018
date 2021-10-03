@@ -65,7 +65,7 @@ class priceproduct_controller
 
      public function delete()
      {
-         $qtyp = $_GET['qtyp_id'];
+         $qtyp = $_GET['qtyp'];
          priceModels::delete($qtyp);
          priceproduct_controller::index();
      }
