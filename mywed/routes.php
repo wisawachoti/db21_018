@@ -1,7 +1,7 @@
 <?php
 $controllers = 
 array('home'=>['home','error']
-,'detaildb'=>['index','search','update','upd','newofferdetail','addofferdetail','un','an']
+,'detaildb'=>['index','search','update','upd','newofferdetail','addofferdetail','un','an','delete','deleteconfirm']
 ,'offer'=>['index'],
 'priceproduct'=>['index','newpriceProduct','addProduct','search','updateForms','update','deleteconfirm','delete']);
 

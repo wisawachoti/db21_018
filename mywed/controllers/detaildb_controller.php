@@ -92,5 +92,25 @@ class DetaildbController{
        DetaildbController::index();
     }
 
+
+
+    public function deleteconfirm()
+    {
+       $detailid = $_GET['detailid'];
+
+       $offerdetail = offerdetailModel::get($detailid);
+
+       $keyc = $_GET['cp_id'];
+       $colord = colorModel::get($keyc);
+       require_once('./views/detaildb/delete.php');
+    }
+
+    public function delete()
+    {
+        $detailid= $_GET['detailid'];
+        offerdetailModel::delete($detailid);
+        DetaildbController::index();
+    }
+
 }
 ?>

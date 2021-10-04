@@ -28,6 +28,7 @@ Search</button>
     <td>$offerdetail->color_name</td> 
     <td>$offerdetail->printt</td> 
     <td>  <a href=?controller=detaildb&action=update&detail_id=$offerdetail->detail_id&product_id=$offerdetail->product_id> update </a> </td>
+    <td>  <a href=?controller=detaildb&action=deleteconfirm&detailid=$offerdetail->detail_id&cp_id=$offerdetail->cp_id> delete </a> </td>
  </tr>";
     }
     echo "</table>";

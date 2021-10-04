@@ -93,10 +93,10 @@ class offerdetailModel{
 
 // =============================================================================================================================================__delete
 
-    public static function delete($offer_id)
+    public static function delete($detailid)
     {
         require("connection_connect.php");
-        $sql = "DELETE FROM Quantity WHERE offer_id = $offer_id AND product_id`= $product_id AND `cp.color_name`=$color_name";
+        $sql = "DELETE FROM offerdetail WHERE offerdetail_id = $detailid ";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
