@@ -6,7 +6,8 @@
     public $pay_m;
     public $customerID;
     public $employeeID;
-    public function _construct ($id,$date,$payment,$pay_m,$customerID,$employeeID){
+    
+    public function __construct ($id,$date,$payment,$pay_m,$customerID,$employeeID){
         $this->id = $id;
         $this->date = $date;
         $this->payment = $payment;

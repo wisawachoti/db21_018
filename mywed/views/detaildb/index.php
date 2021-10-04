@@ -21,16 +21,13 @@ Search</button>
     </tr>
     <?php foreach ($offerdetailList as $offerdetail) {
         echo "<tr> 
-
     <td>$offerdetail->detail_id</td>
     <td>$offerdetail->offer_id</td>
     <td>$offerdetail->product_id</td> 
     <td>$offerdetail->quantity</td> 
     <td>$offerdetail->color_name</td> 
     <td>$offerdetail->printt</td> 
-    <td>  <a href=?controller=detaildb&action=update&detail_id=$offerdetail->detail_id> update </a> </td>
-
-
+    <td>  <a href=?controller=detaildb&action=update&detail_id=$offerdetail->detail_id&product_id=$offerdetail->product_id> update </a> </td>
  </tr>";
     }
     echo "</table>";

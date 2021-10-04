@@ -2,9 +2,9 @@
 
 class offerdetailModel{
 
-    public $offer_id,$product_id,$quantity,$printt,$color_name,$detail_id;
+    public $offer_id,$product_id,$quantity,$printt,$color_name,$detail_id,$cp_id;
 
-    public function __construct($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name)
+    public function __construct($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$cp_id)
     {
             $this->color_name = $color_name;
             $this->offer_id = $offer_id;
@@ -12,13 +12,14 @@ class offerdetailModel{
             $this->quantity = $quantity;
             $this->printt = $printt;
             $this->detail_id = $detail_id;
+            $this->cp_id= $cp_id;
             
     }
 
     public static function get($detail_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT offerdetail_id,offer_id,of.product_id,quantity,of.print as pt,cp.color_name FROM offerdetail as of INNER JOIN Color_Product as cp ON cp.cp_id = of.cp_id
+        $sql = "SELECT offerdetail_id,offer_id,of.product_id,quantity,of.print as pt,cp.color_name , cp.cp_id as c FROM offerdetail as of INNER JOIN Color_Product as cp ON cp.cp_id = of.cp_id
                   WHERE offerdetail_id=$detail_id ";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
@@ -28,29 +29,33 @@ class offerdetailModel{
             $product_id= $my_row[product_id];
             $printt = $my_row[pt];
             $color_name= $my_row[color_name];
+            $cp_id= $my_row[c];
         require("connection_close.php");
 
-        return new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name);
+        return new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$cp_id);
     }
 
     public static function search($key)
     {
-        $offerdetailList[]=[];
+        $offerdetailList=[];
         require("connection_connect.php");
-        $sql = "SELECT offerdetail_id,offer_id,of.product_id,quantity,of.print as pt,cp.color_name FROM offerdetail as of INNER JOIN Color_Product as cp ON cp.cp_id = of.cp_id
+        
+        $sql = "SELECT offerdetail_id,offer_id,of.product_id,quantity,of.print as pt,cp.color_name , cp.cp_id as c FROM offerdetail as of INNER JOIN Color_Product as cp ON cp.cp_id = of.cp_id
         
          WHERE (of.offer_id like '%$key%' or of.product_id like '%$key%' or of.quantity like '%$key%' or of.print like '%$key%' or cp.color_name like '%$key%') ";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
+
             $detail_id= $my_row[offerdetail_id];
             $offer_id= $my_row[offer_id];
             $quantity = $my_row[quantity];
             $product_id= $my_row[product_id];
             $printt = $my_row[pt];
             $color_name= $my_row[color_name];
+            $cp_id= $my_row[c];
 
-            $offerdetailList[] = new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name);
+            $offerdetailList[] = new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$cp_id);
             
         }
         require("connection_close.php");
@@ -59,7 +64,7 @@ class offerdetailModel{
     }
 
 
-    public static function update($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$detailid)
+    public static function update($detail_id,$offer_id,$product_id,$quantity,$printt,$cp_id,$detailid)
     {
         require("connection_connect.php");
         $sql = "UPDATE offerdetail
@@ -67,10 +72,10 @@ class offerdetailModel{
         WHERE `offerdetail_id`='$detailid'";
         $result = $conn->query($sql);
 
-        // $sql2 = "UPDATE `offerdetail`
-        // SET `color_name`=$color_name
-        // WHERE `offerdetail_id`='$detailid'";
-        // $result = $conn->query($sql2);
+        $sql2 = "UPDATE `offerdetail`
+        SET `cp_id`=$cp_id
+        WHERE `offerdetail_id`='$detailid'";
+        $result = $conn->query($sql2);
 
         require("connection_close.php");
         return "update success $result row";
@@ -93,7 +98,7 @@ class offerdetailModel{
 
         $offerdetailList = [];
         require("connection_connect.php");
-        $sql = "SELECT offerdetail_id,offer_id,of.product_id,quantity,of.print as pt,cp.color_name FROM offerdetail as of INNER JOIN Color_Product as cp ON cp.cp_id = of.cp_id";
+        $sql = "SELECT offerdetail_id,offer_id,of.product_id,quantity,of.print as pt,cp.color_name ,cp.cp_id as c FROM offerdetail as of INNER JOIN Color_Product as cp ON cp.cp_id = of.cp_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -104,10 +109,9 @@ class offerdetailModel{
             $product_id= $my_row[product_id];
             $printt = $my_row[pt];
             $color_name= $my_row[color_name];
-
-
-
-            $offerdetailList[] = new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name);
+            $cp_id= $my_row[c];
+            
+            $offerdetailList[] = new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$cp_id);
             
         }
         require("connection_close.php");

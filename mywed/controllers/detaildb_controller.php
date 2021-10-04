@@ -16,9 +16,14 @@ class DetaildbController{
 
     public function update()
     {
+
+
         $key = $_GET['detail_id'];
+        $keyc = $_GET['product_id'];
         $offerdetail =  offerdetailModel::get($key);
         $productModelsList = productModels::getAll();
+        $offerModelsList = OfferModels::getAll();
+        $colorModelsList = colorModel::getcolor($keyc);
         require_once('views/detaildb/update.php');
         
     }
@@ -31,10 +36,10 @@ class DetaildbController{
         $product_id = $_GET['product_id'];
         $quantity = $_GET['quantity'];
         $printt  = $_GET['printt'];
-        $color_name = $_GET['color_name'];
+        $cp_id = $_GET['cp_id'];
         $detailid = $_GET['detailid'];
         
-       offerdetailModel::update($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$detailid);
+       offerdetailModel::update($detail_id,$offer_id,$product_id,$quantity,$printt,$cp_id,$detailid);
        DetaildbController::index();
     }
 
