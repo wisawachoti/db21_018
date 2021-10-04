@@ -59,15 +59,22 @@ class offerdetailModel{
     }
 
 
-    public static function update($offer_id,$product_id,$quantity,$printt,$color_name)
+    public static function update($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$detailid)
     {
         require("connection_connect.php");
-        $sql = "UPDATE `offerdetail`
-        SET `offer_id`=$offer_id,`product_id`= $product_id, `print`='$printt',`cp.color_name`=$color_name,`quantity`=$quantity
-        WHERE `offer_id`=$offer_id AND `product_id`='$product_id'";
+        $sql = "UPDATE offerdetail
+        SET `offerdetail_id`=$detail_id,`offer_id`='$offer_id',`product_id`='$product_id',`print`=$printt,`quantity`=$quantity
+        WHERE `offerdetail_id`='$detailid'";
         $result = $conn->query($sql);
+
+        // $sql2 = "UPDATE `offerdetail`
+        // SET `color_name`=$color_name
+        // WHERE `offerdetail_id`='$detailid'";
+        // $result = $conn->query($sql2);
+
         require("connection_close.php");
         return "update success $result row";
+
     }
 
     public static function delete($offer_id)

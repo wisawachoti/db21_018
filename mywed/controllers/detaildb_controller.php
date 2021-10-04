@@ -1,5 +1,7 @@
 <?php
 class DetaildbController{
+
+
     public function index(){
         $offerdetailList = offerdetailModel::getAll();
         require_once('views/detaildb/index.php');
@@ -21,18 +23,20 @@ class DetaildbController{
         
     }
 
-    // public function update()
-    // {
-
-    //     $offer_id = $_GET['offer_id'];
-    //     $quantity = $_GET['quantity'];
-    //     $product_id = $_GET['product_id'];
-    //     $printt  = $_GET['printt'];
-    //     $color_name = $_GET['color_name'];
-     
-    //    offerdetailModel::update($offer_id,$product_id,$quantity,$printt,$color_name);
-    //    DetaildbController::index();
-    // }
+    public function upd()
+    {
+        
+        $detail_id = $_GET['detail_id'];
+        $offer_id = $_GET['offer_id'];
+        $product_id = $_GET['product_id'];
+        $quantity = $_GET['quantity'];
+        $printt  = $_GET['printt'];
+        $color_name = $_GET['color_name'];
+        $detailid = $_GET['detailid'];
+        
+       offerdetailModel::update($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$detailid);
+       DetaildbController::index();
+    }
 
 }
 ?>
