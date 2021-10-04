@@ -10,7 +10,7 @@
 
     public static function getAll()
     {
-        $employeeModelsList = [];
+        $employeeList = [];
         require("connection_connect.php");
         $sql = "SELECT employee_id,name FROM Employee";
         $result = $conn->query($sql);
@@ -18,11 +18,11 @@
         {
             $employee_id = $my_row['employee_id'];
             $name = $my_row['name'];
-            $employeeModelsList[] = new EmployeeModels($employee_id,$name);
+            $employeeList[] = new EmployeeModels($employee_id,$name);
         }
         require("connection_close.php");
 
-        return $employeeModelsList;
+        return $employeeList;
     }
 }
 ?>
