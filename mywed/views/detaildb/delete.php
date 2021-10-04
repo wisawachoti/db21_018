@@ -1,5 +1,4 @@
 <?php echo "<br>Are you sure to delete this student <br>
-            <br>  detail_id :$offerdetail->detail_id 
             <br>offer_id :$offerdetail->offer_id 
             <br>product_id:$offerdetail->product_id
             <br>quantity:$offerdetail->quantity
