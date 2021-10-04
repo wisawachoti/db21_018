@@ -1,6 +1,7 @@
 <?php
 $controllers = 
-array('home'=>['home','error'],'detaildb'=>['index','search','update','upd']
+array('home'=>['home','error']
+,'detaildb'=>['index','search','update','upd','newofferdetail','addofferdetail','un','an']
 ,'offer'=>['index'],
 'priceproduct'=>['index','newpriceProduct','addProduct','search','updateForms','update','deleteconfirm','delete']);
 

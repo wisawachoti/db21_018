@@ -1,6 +1,6 @@
 <p>วิศวะ โชติพันธุ์พงศ์</p>
 
-
+<br>new priceProduct <a href=?controller=detaildb&action=newofferdetail>Click</a><br>
 
 <table border=1>
 <form method="get" action="">

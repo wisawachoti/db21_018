@@ -4,6 +4,10 @@ class offerdetailModel{
 
     public $offer_id,$product_id,$quantity,$printt,$color_name,$detail_id,$cp_id;
 
+
+
+// =============================================================================================================================================__construct
+
     public function __construct($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$cp_id)
     {
             $this->color_name = $color_name;
@@ -15,6 +19,8 @@ class offerdetailModel{
             $this->cp_id= $cp_id;
             
     }
+
+// =============================================================================================================================================__get
 
     public static function get($detail_id)
     {
@@ -34,6 +40,8 @@ class offerdetailModel{
 
         return new offerdetailModel($detail_id,$offer_id,$product_id,$quantity,$printt,$color_name,$cp_id);
     }
+
+// =============================================================================================================================================__search
 
     public static function search($key)
     {
@@ -63,6 +71,7 @@ class offerdetailModel{
         return $offerdetailList;
     }
 
+// =============================================================================================================================================__update
 
     public static function update($detail_id,$offer_id,$product_id,$quantity,$printt,$cp_id,$detailid)
     {
@@ -82,6 +91,8 @@ class offerdetailModel{
 
     }
 
+// =============================================================================================================================================__delete
+
     public static function delete($offer_id)
     {
         require("connection_connect.php");
@@ -91,8 +102,19 @@ class offerdetailModel{
         return "delete success $result row";
     }
 
+// =============================================================================================================================================__Add
 
+    public static function Add($offer_id,$product_id,$quantity,$print,$cp_id)
+    {
+        require("connection_connect.php");
+        $sql = "INSERT INTO `offerdetail`(`offer_id`,`product_id`,`quantity`,`print`,`cp_id` ) 
+        VALUES ('$offer_id','$product_id',$quantity,$print,$cp_id)";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return ;
+    }
 
+// =============================================================================================================================================__getall
 
     public static function getAll(){
 
